@@ -1,0 +1,42 @@
+<odoo>
+  <data>
+  
+    <!-- Punto de venta -->
+    <record id="method_no_create_hide.view_pos_pos_form" model="ir.ui.view">
+      <field name="name">method.no.create.hide.view.pos.pos.form</field>
+      <field name="model">pos.order</field>
+      <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="attributes">
+            <attribute name="options">{'no_create':True}</attribute>
+        </xpath>      
+      </field>
+    </record>
+
+
+    <!-- Compras -->
+    <record id="method_no_create_hide.view_order_form" model="ir.ui.view">
+      <field name="name">method.no.create.hide.view.order.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="attributes">
+            <attribute name="options">{'no_create':True}</attribute>
+        </xpath>      
+      </field>
+    </record>
+
+    <!-- Compras -->
+    <record id="method_no_create_hide.purchase_order_form" model="ir.ui.view">
+      <field name="name">method.no.create.hide.purchase.order.form</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="attributes">
+            <attribute name="options">{'no_create':True}</attribute>
+        </xpath>      
+      </field>
+    </record>
+
+  </data>
+</odoo>
